@@ -4,9 +4,12 @@ import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
 import 'package:shelf_router/shelf_router.dart';
 
-// Configure routes.
+// Cấu hình flutter
 final _router = Router()
   ..get('/', _rootHandler)
+  ..get('/api/v1/check', _rootHandler)
+  ..get('/echo/<message>', _rootHandler)
+
   ..get('/echo/<message>', _echoHandler);
 
 Response _rootHandler(Request req) {
